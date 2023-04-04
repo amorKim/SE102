@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+
 class AnnouncementPage extends StatefulWidget {
   const AnnouncementPage({Key? key}) : super(key: key);
 
@@ -15,21 +16,14 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(20),
-          child: AppBar(
-            title: const Text('HNU Advisory', style: TextStyle(color: Colors.black, fontSize:15.0 ),),
-            backgroundColor: Colors.white,
-          )
 
-      ),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
+          const Text('HNU ADVISORY',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
           const SizedBox(height: 15,),
           CarouselSlider(
             items:[
-
               Container(
                 margin: const EdgeInsets.all(5.0),
                 decoration: BoxDecoration(
@@ -39,6 +33,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                       fit: BoxFit.cover,
                     )
                 ),
+
               ),
               Container(
                 margin: const EdgeInsets.all(5.0),
@@ -73,13 +68,14 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
 
             ],
             options: CarouselOptions(
-                height: 280,
+                height: 300,
                 enlargeCenterPage: true,
                 autoPlay: true,
-                viewportFraction: 0.8
+                viewportFraction: 0.8,
             ),
           ),
-          const SizedBox(height: 30,),
+          const Text('THE WORD',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          const SizedBox(height: 20),
           CarouselSlider(
             items:[
 
@@ -94,6 +90,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                 ),
               ),
               Container(
+
                 margin: const EdgeInsets.all(5.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
@@ -105,14 +102,15 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
               )
             ],
             options: CarouselOptions(
-                height: 280,
+                height: 300,
                 enlargeCenterPage: true,
                 aspectRatio: 16/9,
                 autoPlay: true,
                 viewportFraction: 0.8
             ),
           ),
-          const SizedBox(height: 30,),
+          const Text('EXAMINATION SCHEDULE',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          const SizedBox(height: 20,),
           CarouselSlider(
             items:[
 
@@ -121,7 +119,7 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     image: const DecorationImage(
-                      image: AssetImage('assets/theWord_1.20.jpg'),
+                      image: AssetImage('assets/exam_1.jpg'),
                       fit: BoxFit.cover,
                     )
                 ),
@@ -131,14 +129,48 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     image: const DecorationImage(
-                      image: AssetImage('assets/theWordCover.png'),
+                      image: AssetImage('assets/exam2.jpg'),
                       fit: BoxFit.cover,
                     )
                 ),
-              )
+              ),
             ],
             options: CarouselOptions(
-                height: 280,
+                height: 300,
+                enlargeCenterPage: true,
+                aspectRatio: 16/9,
+                autoPlay: true,
+                viewportFraction: 0.8
+            ),
+          ),
+          const Text('OTHERS',style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          const SizedBox(height: 20),
+          CarouselSlider(
+            items:[
+
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/noclasses.jpg'),
+                      fit: BoxFit.cover,
+                    )
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/hagit_sa_semana_santa2023.jpg'),
+                      fit: BoxFit.cover,
+                    )
+                ),
+              ),
+            ],
+            options: CarouselOptions(
+                height: 300,
                 enlargeCenterPage: true,
                 aspectRatio: 16/9,
                 autoPlay: true,
