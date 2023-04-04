@@ -3,11 +3,27 @@ import 'package:hnu_mis_announcement/academics/academics.dart';
 import 'package:hnu_mis_announcement/drawer/drawer.dart';
 import 'package:hnu_mis_announcement/financials/financials.dart';
 import 'package:hnu_mis_announcement/homepage/homepage.dart';
+import 'package:hnu_mis_announcement/loginPage.dart';
 
 
 void main() {
   runApp(const MyApp());
 }
+
+class Person {
+  final String course;
+  final int loadunits;
+  final int payunits;
+  final double total;
+
+  Person({
+    required this.course,
+    required this.loadunits,
+    required this.payunits,
+    required this.total,
+  });
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -21,7 +37,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const BottomTabs(),
+
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/second': (context) => const BottomTabs(),
+      },
     );
   }
 }
@@ -36,9 +57,10 @@ class BottomTabs extends StatefulWidget {
 class _BottomTabsState extends State<BottomTabs> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomePage(),
-    FinancialsPage(),
-    AcademicsPage(),
+    const HomePage(),
+    const FinancialsPage(),
+    const AcademicsPage(),
+
   ];
 
   void onTappedBar(int index){
@@ -65,7 +87,7 @@ class _BottomTabsState extends State<BottomTabs> {
               label: 'Home'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
+            icon: Icon(Icons.money_outlined),
               label: 'Financials'
           ),
           BottomNavigationBarItem(
